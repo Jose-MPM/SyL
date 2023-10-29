@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/estiloRecetas.css">
+
+</head>
+<body>
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-md  navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand " href="menu.html">Receptario</a>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="inventario.html">inventario </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menú</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- Inisiar secion, registrarse -->
+            <form class="form-inline mt-2 mt-md-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Iniciar Secion</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Registrarse</button>
+            </form>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article>
+            <h1 class="mt-5"><strong>Inventario</strong></h1>
+            <div >
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr >
+                            <th>Nombre de producto</th>
+                            <th>Cantidad en existencia</th>
+                            <th>Costo</th>
+                            <th>fecha en que se adquirio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+                        <tr>
+                            <td>jitomates</td>
+                            <td>20k</td>
+                            <td>$789</td>
+                            <td>23/02/2023</td>
+                            <td class="text-center"><a href="editarProducto.html" class="btn btn-success">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>lata de chile chipotle</td>
+                            <td>200</td>
+                            <td>$1289</td>
+                            <td>19/02/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>aceite</td>
+                            <td>300 botellas</td>
+                            <td>$569</td>
+                            <td>12/11/2022</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>cebolla blanca</td>
+                            <td>87k</td>
+                            <td>$534</td>
+                            <td>22/02/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>ajo</td>
+                            <td>218 </td>
+                            <td>$249</td>
+                            <td>02/04/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>cubo de de Knorr® Tomate</td>
+                            <td>300 paquetes</td>
+                            <td>$427</td>
+                            <td>13/03/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>pechuga de pollo</td>
+                            <td>140k</td>
+                            <td>$1789</td>
+                            <td>13/09/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>laurel</td>
+                            <td>20</td>
+                            <td>$89</td>
+                            <td>23/08/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>albahaca</td>
+                            <td>5k</td>
+                            <td>$139</td>
+                            <td>19/09/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>orégano</td>
+                            <td>4k</td>
+                            <td>$89</td>
+                            <td>16/09/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>sobre (70 gramos) de Rinde Más De Knorr®</td>
+                            <td>200 paquetes</td>
+                            <td>$789</td>
+                            <td>23/07/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>carne molida de res</td>
+                            <td>80k</td>
+                            <td>$467</td>
+                            <td>13/09/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>pimiento morrón rojo</td>
+                            <td>30k</td>
+                            <td>$189</td>
+                            <td>13/08/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>pimienta negra</td>
+                            <td>8k</td>
+                            <td>$283</td>
+                            <td>21/07/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>canela molida</td>
+                            <td>4k</td>
+                            <td>$279</td>
+                            <td>13/08/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td>láminas de pasta para lasagna precocida</td>
+                            <td>249</td>
+                            <td>$1049</td>
+                            <td>13/09/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>queso mozzarella</td>
+                            <td>20k</td>
+                            <td>$983</td>
+                            <td>08/09/2023</td>
+                            <td class="text-center"><a href="#" class="btn btn-secondary">Editar</a></td>
+                        </tr>                    
+                </table>
+                <a href="agregarProdcuto.html" class="btn btn-dark">Agregar producto</a>
+            </div>
+        </article>
+        <p></p>
+        
+    </main>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-dark text-white">
+    
+        <!-- Section: Links  -->
+        <section class="d-flex justify-content-center justify-content-lg-between  border-bottom">
+            <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="fas fa-gem me-3 text-secondary"></i>Receptario
+                </h6>
+                <p>
+                    ¡Suscríbete! Únete a nuestra comunidad y recibe deliciosas recetas para disfrutar.
+                </p>
+                <a href="#!" class="btn btn-secondary">¡Suscríbete</a>
+                </div>
+            
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                Recetas
+                </h6>
+                <p>
+                    <a href="#!" class="text-reset">Recetas Mexicanas</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">Delicias Asiáticas</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">Parrillada</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">30 Minutos o Menos</a>
+                </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                Legales
+                </h6>
+                <p>
+                    <a href="#!" class="text-reset">Accesibilidad</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">Aviso de Cookies</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">Aviso de Privasidad</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">Aviso Legal</a>
+                </p>
+                <p>
+                    <a href="#!" class="text-reset">Condiciones de uso</a>
+                </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                <p><i class="fas fa-home me-3 text-secondary"></i> Ciudad de México, NZ 10012, MX</p>
+                <p>
+                    <i class="fas fa-envelope me-3 text-secondary"></i>
+                    josuemt02@ciencias.unam.mx
+                </p>
+                <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
+                <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</body>
+</html>

@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+header{
+    padding: 10px;
+}
+table{
+    margin-top: 10px;
+}
+h1 {
+    text-align: center;
+    margin: 10px;
+    color: rgb(111, 206, 17);
+}
+.ingredients {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+}
+.recipe {
+    padding: 20px;
+    word-wrap: break-word; /* Agregamos esta propiedad */
+}
+#preparacion{
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+image{
+   margin-top: 80px;
+   word-wrap: break-word;
+}
+footer{
+    margin-top: 15px ;
+}
+
+#imgResumen {
+    
+    background-color: rgb(238, 245, 243);
+    padding-top: 10px;
+    border-radius: 20px;
+}
+#ingredientes {
+    background-color: rgb(250, 224, 167);
+    border-radius: 20px;
+    font-size: 18px;
+}
