@@ -5,13 +5,13 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout}" >
 <head>
-    <title>Agregar Producto</title>
+    <title>Editar Producto</title>
     
 </head>
 <body>
     <div layout:fragment="main-header">
         <br>
-        <h1 class="mt-5 text-center"><strong>Agregar producto</strong></h1>
+        <h1 class="mt-5 text-center"><strong>Editar producto</strong></h1>
     </div>
     <div layout:fragment="main-content">
         <article>
@@ -19,7 +19,7 @@
                 <div class="col-md-5 mx-auto my-2">
                     <div class="card border-secundary">
                         <div class="card-body">
-                            <form th:action="@{/guardar}" method="POST" th:object="${inventario}">
+                            <form th:action="@{/guardarEdicion}" method="POST" th:object="${inventario}">
                                 <!--Nombre del producto-->
                                 <div class="form-group">
                                     <label for="nombre">Nombre del producto</label>
@@ -44,7 +44,8 @@
                                             <option value="">Selecciona un tipo de producto</option>
 									        <option th:each="tipoProducto : ${listaDeTiposDeProducto}"
 									                th:value="${tipoProducto.idTipoProducto}"
-									                th:text="${tipoProducto.tipo}">
+									                th:text="${tipoProducto.tipo}"
+                                                    th:selected="${tipoProducto.idTipoProducto == tipoProducto.idTipoProducto}"> 
 									        </option>
                                         </select> 
                                     <span class="text-danger" th:if="${#fields.hasErrors('tipoProducto')}" th:errors="*{tipoProducto}">Tipo Producto Error</span>
@@ -57,7 +58,7 @@
                                         class="form-control " 
                                         id="expiracion" 
                                         name="expiracion"
-                                        th:value="${inventario.expiracion}">
+                                        th:value="${#dates.format(inventario.expiracion, 'yyyy-MM-dd')}">
                                     <span class="text-danger" th:if="${#fields.hasErrors('expiracion')}" th:errors="*{expiracion}">Name Error</span>
                                 </div>
                                 <!-- Fecha -->
@@ -68,7 +69,7 @@
                                         class="form-control" 
                                         id="adquisicion" 
                                         name="adquisicion"
-                                        th:value="${inventario.adquisicion}"
+                                        th:value="${#dates.format(inventario.adquisicion, 'yyyy-MM-dd')}" 
                                         required>
                                     <span class="text-danger" th:if="${#fields.hasErrors('adquisicion')}" th:errors="*{adquisicion}">Name Error</span>
                                 </div>
@@ -146,7 +147,8 @@
                                 </div>
                             
                                 <p></p>
-                                <input type="submit" value="Guardar" >
+                                <input type="submit" class="btn btn-success" value="Guardar cambios" >
+                                <a th:href="@{/inventario}" class="btn btn-danger">Cancelar</a>
                             </form>
                         </div>
                     </div>

@@ -20,4 +20,8 @@ public class InventarioService {
         return repository.save(inventario);
     }
 
+    public Inventario getInventarioById(Long id) {
+        return repository.findById(id).orElse(null);
+    }
+
 }

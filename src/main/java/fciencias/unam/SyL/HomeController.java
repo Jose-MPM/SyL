@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -88,6 +89,31 @@ public class HomeController {
     //    this.mailSendr.sendSimpleMessage("ingrediente agregado");
        return "redirect:/inventario";
     }
+
+    @GetMapping("/editar/{id}")
+    public String mostrarFormularioEditar(@PathVariable Long id, Model model) {
+        Inventario inventarioAEditar = service.getInventarioById(id);
+        
+        if (inventarioAEditar != null) {
+            model.addAttribute("inventario", inventarioAEditar);
+            List<TipoProducto> listaDeTiposDeProducto = tipoProductoService.getTiposProducto();
+            model.addAttribute("listaDeTiposDeProducto", listaDeTiposDeProducto);
+            model.addAttribute("tipoProducto", inventarioAEditar.getTipoProducto());
+            return "editarProducto"; 
+        } else {
+            return "redirect:/inventario"; // redirige a una página de error
+        }
+    }
+
+
+    //@PostMapping("/guardarEdicion")
+    //public String saveEdit(@Valid @ModelAttribute Inventario inventario, BindingResult result) {
+    //}
+
+    //@GetMapping("/eliminar/{id}")
+    //public String delete(@PathVariable Long id) {
+    //}
+
     
     // @GetMapping("/restStatic")
     // public String restStatic(Model model) {
