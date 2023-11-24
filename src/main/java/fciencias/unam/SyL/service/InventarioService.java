@@ -32,7 +32,7 @@ public class InventarioService {
 
     }
     public Inventario readByidIngrediente(Long id) {
-        return Optional.of(repository.getReferenceById(id)).orElse(null);
+        return Optional.of(repository.findById(id)).orElse(null).get();
     }
     public Inventario update(Inventario inventario) {
         Inventario toUpdate = repository.getReferenceById(inventario.getIdIngrediente());
