@@ -19,17 +19,17 @@ public class InventaryScrapperService {
         try{
             File pageFile = new File("/home/rodrigo/Desktop/Repos/TDIaux/SyL/src/main/resources/page/Soriana.html");
 
-            // Document doc = Jsoup.parse(pageFile, "UTF-8");
-            Document doc = Jsoup.connect("https://www.soriana.com/frutas-y-verduras/")
-                                .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
-                                .header("Accept-Language", "*")
-                                .get();
+            Document doc = Jsoup.parse(pageFile, "UTF-8");
+            // Document doc = Jsoup.connect("https://www.soriana.com/frutas-y-verduras/")
+            //                     .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
+            //                     .header("Accept-Language", "*")
+            //                     .get();
             // System.out.println("HTML================================");
             // System.out.println(doc.html());
 
-            FileWriter file2 = new FileWriter("/home/rodrigo/Desktop/Repos/TDIaux/SyL/src/main/resources/page/aux.html");
-            file2.write(doc.html());
-            file2.close();
+            // FileWriter file2 = new FileWriter("/home/rodrigo/Desktop/Repos/TDIaux/SyL/src/main/resources/page/aux.html");
+            // file2.write(doc.html());
+            // file2.close();
 
             
 
@@ -48,6 +48,7 @@ public class InventaryScrapperService {
             
             // .tile-body, .product-tile--body, .w-100, .p-0 \\producto
             // tile-body product-tile--body w-100 p-0 \\producto 
+            // ".product-tile--wrapper.d-flex.list-item-product.pb-1.slick-slide.slick-current.slick-active"//productClasses2
             // .link, .plp-link, .font-primary--medium, .product-tile--link, .ellipsis-product-name, .font-size-16 \\name
             // link plp-link font-primary--medium product-tile--link ellipsis-product-name font-size-16 \\name
             // mr-0 cart-price price-plp price-not-found price-pdp pr-0  font-size-14   font-size-14 cart-price-option-b \\price
@@ -77,12 +78,12 @@ public class InventaryScrapperService {
                 // inventarioScrapped.setPrecio(Float.parseFloat(price));
                 // inventarioScrapped.setPathImagen(e.select(imageClasses).first().select("img").first().attr("data-src"));
 
-                System.out.print("Name:");
-                System.out.println(e.select(nameClasses).first().text());
-                System.out.print("Price:");
-                System.out.println(Float.parseFloat(price));
-                System.out.print("Path:");
-                System.out.println(e.select(imageClasses).first().select("img").first().attr("data-src"));
+                // System.out.print("Name:");
+                // System.out.println(e.select(nameClasses).first().text());
+                // System.out.print("Price:");
+                // System.out.println(Float.parseFloat(price));
+                // System.out.print("Path:");
+                // System.out.println(e.select(imageClasses).first().select("img").first().attr("data-src"));
                 list.add(
                     new InventarioScrapped(
                         e.select(nameClasses).first().text(),
