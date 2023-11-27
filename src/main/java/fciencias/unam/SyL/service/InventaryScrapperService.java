@@ -20,15 +20,12 @@ public class InventaryScrapperService {
 
             Document doc = Jsoup.parse(pageFile, "UTF-8");
             
-            String productClasses1 = ".product-tile--wrapper.d-flex.list-item-product.pb-1";//check
-            Elements products = doc.select(productClasses1);
-            for(Element e: products)
-                System.out.print(e.html());
+            String productClasses = ".product-tile--wrapper.d-flex.list-item-product.pb-1";//check
+            Elements products = doc.select(productClasses);
             
             String priceClasses = ".mr-0.cart-price.price-plp.price-not-found.price-pdp.pr-0.font-size-14.font-size-14.cart-price-option-b";
             String nameClasses = ".link.plp-link.font-primary--medium.product-tile--link.ellipsis-product-name.font-size-16";
             String imageClasses = ".w-100.justify-content-center.is-new-plp-enabled";
-            String imageClasses2 = "tile-image.content-visibility-auto.img-dimentions.is-new-plp-enabled.lazyloaded";
             
             List<InventarioScrapped> list = new ArrayList<>();
 

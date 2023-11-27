@@ -113,7 +113,7 @@ public class InventarioController {
     
     @GetMapping("/scrapper")
     public String scrap(Model model) {
-        logger.info("*** DELETE Inventario - Controller");
+        logger.info("*** SCRAPPING from Soriana Inventario - Controller");
         model.addAttribute("inventaryScrapped",inventaryScrapperService.getScrapping());
         return "inventario/scrappedResult";
 
