@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.validation.BindingResult;
 
 import fciencias.unam.SyL.entity.DateRange;
@@ -20,6 +21,7 @@ import fciencias.unam.SyL.entity.Inventario;
 import fciencias.unam.SyL.entity.TipoProducto;
 import fciencias.unam.SyL.service.InventarioService;
 import fciencias.unam.SyL.service.TipoProductoService;
+import fciencias.unam.SyL.service.InventaryScrapperService;
 import jakarta.validation.Valid;
 
 @Controller
@@ -31,6 +33,9 @@ public class InventarioController {
     
     @Autowired
     private TipoProductoService tipoProductoService;
+
+    @Autowired
+    private InventaryScrapperService inventaryScrapperService;
 
     private final Logger logger = LogManager.getLogger(InventarioController.class);
     
@@ -105,5 +110,13 @@ public class InventarioController {
         serviceInventario.deleteByIdIngrediente(id);
         return "redirect:/inventario/inventario";
     }
-
+    
+    @GetMapping("/scrapper")
+    @ResponseBody
+    public String scrap() {
+        logger.info("*** DELETE Inventario - Controller");
+        // return inventaryScrapperService.getScrapping();
+        return "";
+    }
+    
 }
