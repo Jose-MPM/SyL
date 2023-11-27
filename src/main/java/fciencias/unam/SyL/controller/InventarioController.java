@@ -112,11 +112,10 @@ public class InventarioController {
     }
     
     @GetMapping("/scrapper")
-    @ResponseBody
-    public String scrap() {
+    public String scrap(Model model) {
         logger.info("*** DELETE Inventario - Controller");
-        // return inventaryScrapperService.getScrapping();
-        return "";
+        model.addAttribute("inventaryScrapped",inventaryScrapperService.getScrapping());
+        return "inventario/scrappedResult";
+
     }
-    
 }
