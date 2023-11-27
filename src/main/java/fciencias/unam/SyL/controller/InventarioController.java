@@ -20,6 +20,7 @@ import fciencias.unam.SyL.entity.Inventario;
 import fciencias.unam.SyL.entity.TipoProducto;
 import fciencias.unam.SyL.service.InventarioService;
 import fciencias.unam.SyL.service.TipoProductoService;
+import fciencias.unam.SyL.service.InventaryScrapperService;
 import jakarta.validation.Valid;
 
 @Controller
@@ -31,6 +32,9 @@ public class InventarioController {
     
     @Autowired
     private TipoProductoService tipoProductoService;
+
+    @Autowired
+    private InventaryScrapperService inventaryScrapperService;
 
     private final Logger logger = LogManager.getLogger(InventarioController.class);
     
@@ -105,5 +109,12 @@ public class InventarioController {
         serviceInventario.deleteByIdIngrediente(id);
         return "redirect:/inventario/inventario";
     }
+    
+    @GetMapping("/scrapper")
+    public String scrap(Model model) {
+        logger.info("*** SCRAPPING from Soriana Inventario - Controller");
+        model.addAttribute("inventaryScrapped",inventaryScrapperService.getScrapping());
+        return "inventario/scrappedResult";
 
+    }
 }
