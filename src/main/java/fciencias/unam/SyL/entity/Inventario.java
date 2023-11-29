@@ -33,13 +33,17 @@ import lombok.Setter;
 @Table(name="inventario")
 public class Inventario{
 
+	/* Id del ingrediente. */
 	@Id
-	@Column(name = "idIngrediente", unique=true)
+	@Column(name = "id_ingrediente", unique=true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id_ingrediente")
 	private Long idIngrediente;
 	
+	/* Nombre del producto. */
 	@Column(name="nombre")
 	@NotNull(message="El nombre es requerido")
+	@JsonProperty("nombre")
 	private String nombre;
 	
 	public String getNombre() {
@@ -53,7 +57,9 @@ public class Inventario{
 	/* Tipo del producto.*/
 	@ManyToOne
     @JoinColumn(name = "tipoProducto", referencedColumnName = "idTipoProducto")
+    @JsonProperty("tipo_producto")
     private TipoProducto tipoProducto;
+	
 	
 	@DateRangeConstraint
     @Valid
@@ -71,10 +77,12 @@ public class Inventario{
 	@Column(name="cantidad")
 	@NotNull(message="La cantidad es requerido")
 	@Min(value=0, message="La cantidad debe de ser positivo")
+	@JsonProperty("cantidad")
     private int cantidad;
 	
 	@Column(name="medida")
 	@NotNull(message="La medida es requerida")
+	@JsonProperty("medida")
     private String medida;
 	//con que etiqueta podemos acotar a que sean los gramos, etc
     
@@ -82,20 +90,24 @@ public class Inventario{
 	@Column(name="precio")
 	@NotNull(message="El precio es requerido")
 	@Min(value=1, message="El precio debe de ser positivo, no puede ser 0")
+	@JsonProperty("precio")
     private float precio;
 	//@Max(value=500, message="El precio no puede ser más de 500")
 	
 	/* Descripcion del prodcuto. */
 	@Column(name="descripcion")
+	@JsonProperty("descripcion")
 	private String descripcion;
 	
 	/* Comentario del prodcuto.
 	 * Lo acotamos a 1, no queremos una lista. */
+	@JsonProperty("comentarios")
 	@Column(name="comentarios")
 	private String comentarios;
 	
 	/* Proveedor del prodcuto. */
 	@Column(name="proveedor")
+	@JsonProperty("proveedor")
     private String Proveedor;
 
 }
