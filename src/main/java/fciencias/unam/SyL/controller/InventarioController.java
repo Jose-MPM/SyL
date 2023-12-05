@@ -23,6 +23,8 @@ import fciencias.unam.SyL.service.TipoProductoService;
 import fciencias.unam.SyL.service.InventaryScrapperService;
 import jakarta.validation.Valid;
 
+import fciencias.unam.SyL.entity.InventarioScrapped;
+
 @Controller
 @RequestMapping("/inventario")
 public class InventarioController {
@@ -110,10 +112,14 @@ public class InventarioController {
         return "redirect:/inventario/inventario";
     }
     
-    @GetMapping("/scrapper")
+    @GetMapping("/ScrappearProducto")
     public String scrap(Model model) {
         logger.info("*** SCRAPPING from Soriana Inventario - Controller");
-        model.addAttribute("inventaryScrapped",inventaryScrapperService.getScrapping());
+        List<InventarioScrapped> inventarioScrapped =  inventaryScrapperService.getScrapping();
+        
+        if(inventarioScrapped != null)
+            model.addAttribute("inventaryScrapped", inventarioScrapped);
+
         return "inventario/scrappedResult";
 
     }
